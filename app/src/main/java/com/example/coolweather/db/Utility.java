@@ -1,6 +1,7 @@
 package com.example.coolweather.db;
 
 import android.text.TextUtils;
+import android.util.Log;
 
 import com.example.coolweather.WeatherActivity;
 import com.example.coolweather.gson.Weather;
@@ -11,6 +12,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class Utility {
+    private static final String TAG = "Utility";
     //    用来解析处理服务器返回的数据
     public static boolean handleProvinceResponse(String response) {
         if (!TextUtils.isEmpty(response)){
@@ -56,6 +58,7 @@ public class Utility {
             JSONArray jsonArray = new JSONArray(response);
             for (int i=0;i<jsonArray.length();i++){
                 JSONObject jsonObject = jsonArray.getJSONObject(i);
+                Log.e(TAG, "handleCountyResponse: "+jsonObject);
                 County county = new County();
                 county.setCountyName(jsonObject.getString("name"));
                 county.setWeatherId(jsonObject.getString("weather_id"));
