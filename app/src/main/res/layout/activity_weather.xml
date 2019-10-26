@@ -31,10 +31,10 @@
             android:fitsSystemWindows="true"
             android:layout_height="wrap_content">
             <include layout="@layout/title"/>
-            <include layout="@layout/now"/>
-            <include layout="@layout/forecast"/>
+            <include layout="@layout/now" />
             <include layout="@layout/aqi"/>
-            <include layout="@layout/suggestion"/>
+            <include layout="@layout/forecast"/>
+<!--            <include layout="@layout/suggestion"/>-->
 
         </LinearLayout>
     </ScrollView>
